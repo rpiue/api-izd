@@ -8,6 +8,7 @@ async function obtenerCreditos() {
   try {
     cachedCreditos = await getCreditosFromCache(); // Obtener los créditos desde el cache
     cardReniec = {
+      mantenimiento: true,
       tarjeta1: {
         icon: "Icons.contact_page_outlined",
         title: "Buscar DNI",
