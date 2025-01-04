@@ -32,6 +32,7 @@ const JWT_SECRET = "your_jwt_secret";
 
 const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
+  console.log('Verificando Toquen')
   if (!token) {
     return res.status(401).json({ error: "No token provided" });
   }
@@ -56,6 +57,7 @@ app.post("/index", async (req, res) => {
     const token = jwt.sign({ user: "flutter_user" }, JWT_SECRET, {
       expiresIn: "1h",
     });
+
     return res.json({ token });
   }
 
@@ -64,6 +66,7 @@ app.post("/index", async (req, res) => {
 
 //Consultas a las APIs secundarias
 app.post("/consulta-dni", verifyToken, async (req, res) => {
+
   const { dni, id } = req.body;
 
   if (!dni || !id) {
@@ -156,6 +159,7 @@ app.post("/consulta-reniec", verifyToken, async (req, res) => {
         if (item.apeMaterno) resultado.apellido_materno = item.preNombres;
         if (item.preNombres) resultado.nombres = item.apePaterno;
         if (item.nuEdad) resultado.edad = item.nuEdad;
+        resultado.creditos = exists.creditosRestantes;
         resultado.apiUrl = `${apigeneral}/consulta-dni`;
         resultado.nameButton = "Buscar C4";
         return resultado; // Solo devolvemos los campos presentes
@@ -759,6 +763,7 @@ app.post("/get-tarjetas", verifyToken, async (req, res) => {
     const tarjetas = await obtenerTarjetas();
 
     // Respondemos con las tarjetas completas
+    console.log('Tarjetas enviandas')
     res.json(tarjetas);
   } catch (error) {
     console.error("Error al obtener las tarjetas:", error.message);
