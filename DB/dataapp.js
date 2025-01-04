@@ -22,7 +22,7 @@ const API_URLS = {
     BITEL_NUM: "http://161.132.48.228:5567/apis?tipo=bitel&num=",
   },
 };
-const apigeneral = "https://e470-38-224-225-141.ngrok-free.app";
+const apigeneral = "https://izagidata.onrender.com";
 
 module.exports = {
   API_URLS,
