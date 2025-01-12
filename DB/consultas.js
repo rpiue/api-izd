@@ -265,7 +265,8 @@ async function procesarRespuesta(listaAni, id, costo) {
             console.error(
               `Error al procesar el email "${id}": ${exists.error}`
             );
-            return "Error";
+            return {creditosConsulta: 'Creditos Insuficientes'};
+
           }else{
             creditosRestantes = exists.creditosRestantes;
           }
@@ -355,7 +356,8 @@ async function procesarRespuesta(listaAni, id, costo) {
             console.error(
               `Error al procesar el email "${id}": ${exists.error}`
             );
-            return "Error";
+            return {creditosConsulta: 'Creditos Insuficientes'};
+
           }else{
             creditosRestantes = exists.creditosRestantes;
           }
@@ -388,7 +390,8 @@ async function procesarRespuesta(listaAni, id, costo) {
             console.error(
               `Error al procesar el email "${id}": ${exists.error}`
             );
-            return "Error";
+            return {creditosConsulta: 'Creditos Insuficientes'};
+
           }else{
             creditosRestantes = exists.creditosRestantes;
           }
@@ -407,7 +410,8 @@ async function procesarRespuesta(listaAni, id, costo) {
             console.error(
               `Error al procesar el email "${id}": ${exists.error}`
             );
-            return "Error";
+            return {creditosConsulta: 'Creditos Insuficientes'};
+
           }else{
             creditosRestantes = exists.creditosRestantes;
           }
@@ -441,7 +445,8 @@ async function procesarRespuesta(listaAni, id, costo) {
             console.error(
               `Error al procesar el email "${id}": ${exists.error}`
             );
-            return "Error";
+            return {creditosConsulta: 'Creditos Insuficientes'};
+
           }else{
             creditosRestantes = exists.creditosRestantes;
           }
@@ -503,7 +508,8 @@ async function procesarRespuesta(listaAni, id, costo) {
             console.error(
               `Error al procesar el email "${id}": ${exists.error}`
             );
-            return "Error";
+            return {creditosConsulta: 'Creditos Insuficientes'};
+
           }else{
             creditosRestantes = exists.creditosRestantes;
           }
