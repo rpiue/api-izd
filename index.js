@@ -146,7 +146,7 @@ app.post("/consulta-reniec", verifyToken, async (req, res) => {
         console.error(
           `Error al procesar el email "${id}": ${exists.error}`
         );
-        return  res.json({ mensaje: exists.error });
+        return  res.json({ creditosConsulta: exists.error });
 
       }
       // Modificar la estructura de los resultados
@@ -287,7 +287,7 @@ app.post("/seeker", verifyToken, async (req, res) => {
         console.error(
           `Error al procesar el email "${id}": ${exists.error}`
         );
-        return res.json({ mensaje: exists.error });
+        return res.json({ creditosConsulta: exists.error });
       }
       const SeekerData = {
         datos_Persona: {
@@ -355,7 +355,7 @@ app.post("/seeker-telefono", verifyToken, async (req, res) => {
         console.error(
           `Error al procesar el email "${id}": ${exists.error}`
         );
-        return res.json({ mensaje: exists.error });
+        return res.json({ creditosConsulta: exists.error });
       }
       const SeekerData = {
         datos_Persona: {
