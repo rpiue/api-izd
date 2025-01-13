@@ -32,7 +32,6 @@ const JWT_SECRET = "your_jwt_secret";
 
 const verifyToken = (req, res, next) => {
   const token = req.headers["authorization"];
-  console.log('Verificando Toquen')
   if (!token) {
     return res.status(401).json({ error: "No token provided" });
   }
@@ -763,7 +762,6 @@ app.post("/get-tarjetas", verifyToken, async (req, res) => {
     const tarjetas = await obtenerTarjetas();
 
     // Respondemos con las tarjetas completas
-    console.log('Tarjetas enviandas')
     res.json(tarjetas);
   } catch (error) {
     console.error("Error al obtener las tarjetas:", error.message);
