@@ -237,6 +237,27 @@ async function procesarRespuesta(listaAni, id, costo) {
     //  return "Error";
     //}
 
+    const datos = listaAni?.data?.datos;
+    if (datos) {
+      if (Array.isArray(datos)) {
+        if (datos.length === 0) {
+          console.error("El dato es un arreglo vacío.");
+          // Manejo del error para arreglos vacíos
+          return "Error";
+        } else {
+          console.log("Los datos son un arreglo:", datos);
+        }
+      } else if (typeof datos === "object" && datos !== null) {
+        if (Object.keys(datos).length === 0) {
+          console.error("El dato es un objeto vacío.");
+          return "Error";
+          // Manejo del error para objetos vacíos
+        } else {
+          console.log("Los datos son un objeto:", datos);
+        }
+      }
+    }
+
     //if (listaAni?.data?.datos.length < 1) {
     //  console.error("Sin datos encontrados 3.");
     //  return "Error";
